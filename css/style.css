@@ -32,6 +32,7 @@ main > section > article:nth-child(1){
     justify-content: center;
     flex-direction: row;
     gap:2px;
+    margin-bottom: 10px;
 }
 
 main > section > article:nth-child(1) > section{
@@ -59,4 +60,34 @@ main > section > article:nth-child(1) > section.hour{
 }
 main > section > article:nth-child(1) > section.seconds{
     border-radius: 0px 50px 50px 0px;
+}
+
+.controls {
+    width: 400px;
+    /* background-color: #ff79c6; */
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+.controls > button{
+    color: rgb(80,250,123);
+    transition: all .3s ease-in-out;
+    font-size: 16px;
+    width: 80px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--back2);
+}
+
+.controls > button:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em #50fa7b;
+    transform: translateY(-0.10em);
+}
+
+.controls > button:active{
+    transition: all .1s ease-in-out;
+    transform: translateY(0.3em);
 }
