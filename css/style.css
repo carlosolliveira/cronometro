@@ -11,11 +11,16 @@
     border: none;
     outline: none;
     padding: 0;
+    /* overflow-y: hidden; */
+}
+
+body{
+    height: 100vh;
 }
 
 main {
     max-width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: var(--back1);
     display: flex;
     justify-content: center;
@@ -31,7 +36,7 @@ main > section > article:nth-child(1){
     display: flex;
     justify-content: center;
     flex-direction: row;
-    gap:2px;
+    gap:1.5px;
     margin-bottom: 10px;
 }
 
@@ -44,7 +49,7 @@ main > section > article:nth-child(1) > section{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     font-size: 25px;
 }
 
@@ -64,9 +69,10 @@ main > section > article:nth-child(1) > section.seconds{
 
 .controls {
     width: 400px;
-    /* background-color: #ff79c6; */
+    /* background-color: red; */
     display: flex;
     justify-content: center;
+    align-items: center;
     gap:20px;
 }
 
@@ -74,8 +80,8 @@ main > section > article:nth-child(1) > section.seconds{
     color: rgb(80,250,123);
     transition: all .3s ease-in-out;
     font-size: 16px;
-    width: 80px;
-    padding: 10px 10px;
+    width: 90px;
+    padding: 10px 0px;
     border-radius: 10px;
     border: none;
     outline: none;
