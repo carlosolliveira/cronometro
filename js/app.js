@@ -8,7 +8,7 @@ var m = 0
 
 var loop
 var paused = false
-// var started = false
+var started = false
 
 var cont = () => {
     s += 1
@@ -49,7 +49,7 @@ var cont = () => {
 }
 
 var start = () => {
-    // started = !started
+    started = true
     loop = setInterval(
         cont, 1000
     )
@@ -61,27 +61,33 @@ var start = () => {
 }
 
 var pause = () => {
-    paused = !paused
-    if(paused){
-        clearInterval(loop)
-        document.getElementById("pause").innerText = "Continuar"
-    }else{
-        document.getElementById("pause").innerText = "Pausar"
-        start()
-        // if(started){
-        // }
+    if(started){
+        if(!paused){
+            clearInterval(loop)
+            document.getElementById("pause").innerText = "Continuar"
+            paused = true
+        }else{
+            document.getElementById("pause").innerText = "Pausar"
+            start()
+            paused = false
+            // if(started){
+            // }
+        }
     }
 }
 
 var reset = () => {
-    clearInterval(loop)
-    h, m, s = Number(0)
-    he.innerText = "00"
-    me.innerText = "00"
-    se.innerText = "00"
-    document.getElementById("start").disabled = false
-    document.getElementById("start").style.cursor = "auto"
-    document.getElementById("start").style.background = "#44475a"
-    document.getElementById("start").style.opacity = "1"
-    // started = false
+    if (started) {
+        clearInterval(loop)
+        h, m, s = Number(0)
+        he.innerText = "00"
+        me.innerText = "00"
+        se.innerText = "00"
+        document.getElementById("start").disabled = false
+        document.getElementById("start").style.cursor = "auto"
+        document.getElementById("start").style.background = "#44475a"
+        document.getElementById("start").style.opacity = "1"
+        started = false
+        paused = false
+    }
 }
